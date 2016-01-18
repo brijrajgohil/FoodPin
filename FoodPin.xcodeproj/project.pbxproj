@@ -12,6 +12,7 @@
 		593CFE671C466BE000EE1F1E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 593CFE661C466BE000EE1F1E /* Assets.xcassets */; };
 		593CFE6A1C466BE000EE1F1E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 593CFE681C466BE000EE1F1E /* LaunchScreen.storyboard */; };
 		593CFE721C466CCE00EE1F1E /* RestaurantTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 593CFE711C466CCE00EE1F1E /* RestaurantTableViewController.swift */; };
+		5968C82F1C4D17740018A7E8 /* RestaurantTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5968C82E1C4D17740018A7E8 /* RestaurantTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,7 @@
 		593CFE691C466BE000EE1F1E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		593CFE6B1C466BE000EE1F1E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		593CFE711C466CCE00EE1F1E /* RestaurantTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RestaurantTableViewController.swift; path = ../RestaurantTableViewController.swift; sourceTree = "<group>"; };
+		5968C82E1C4D17740018A7E8 /* RestaurantTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RestaurantTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,6 +59,7 @@
 				593CFE711C466CCE00EE1F1E /* RestaurantTableViewController.swift */,
 				593CFE5F1C466BE000EE1F1E /* AppDelegate.swift */,
 				593CFE631C466BE000EE1F1E /* Main.storyboard */,
+				5968C82E1C4D17740018A7E8 /* RestaurantTableViewCell.swift */,
 				593CFE661C466BE000EE1F1E /* Assets.xcassets */,
 				593CFE681C466BE000EE1F1E /* LaunchScreen.storyboard */,
 				593CFE6B1C466BE000EE1F1E /* Info.plist */,
@@ -136,6 +139,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				593CFE721C466CCE00EE1F1E /* RestaurantTableViewController.swift in Sources */,
+				5968C82F1C4D17740018A7E8 /* RestaurantTableViewCell.swift in Sources */,
 				593CFE601C466BE000EE1F1E /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -284,6 +288,7 @@
 				593CFE701C466BE000EE1F1E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
