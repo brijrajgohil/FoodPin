@@ -71,6 +71,23 @@ class RestaurantTableViewController: UITableViewController {
         let optionalMenu = UIAlertController(title: nil, message: "What do you want to do?", preferredStyle: .ActionSheet)
         let cancelAction = UIAlertAction(title: "Cancel", style: .Cancel, handler: nil)
         optionalMenu.addAction(cancelAction)
+        let callActionHandler = { (action: UIAlertAction!) -> Void in
+            let alertMessage = UIAlertController(title: "Service Uniavailable", message: "Sorry, the call feature is not available yet. Please retry later.", preferredStyle: .Alert)
+            alertMessage.addAction(UIAlertAction(title: "OK", style: .Default, handler: nil))
+            self.presentViewController(alertMessage, animated: true, completion: nil)
+        
+        }
+        let callAction = UIAlertAction(title: "Call " + "123-000-\(indexPath.row)", style: .Default , handler: callActionHandler)
+        optionalMenu.addAction(callAction)
+        
+        let isVisitedHere = UIAlertAction(title: "I've been here!", style: .Default, handler: {
+            
+            (action: UIAlertAction!) -> Void in
+            let cell = tableView.cellForRowAtIndexPath(indexPath)
+            cell?.accessoryType = .Checkmark
+        })
+        optionalMenu.addAction(isVisitedHere)
+        
         self.presentViewController(optionalMenu, animated: true, completion: nil)
     }
 
