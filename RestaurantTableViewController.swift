@@ -26,6 +26,8 @@ class RestaurantTableViewController: UITableViewController {
     var restaurantLocations = ["Hong Kong", "Hong Kong", "Hong Kong", "Hong Kong", "Hong Kong", "Hong Kong", "Hong Kong", "Sydney", "Sydney", "Sydney", "New York", "New York", "New York", "New York", "New York", "New York", "New York", "London", "London", "London", "London"]
     
     var restaurantTypes = ["Coffee & Tea Shop", "Cafe", "Tea House", "Austrian Causual Drink", "French", "Bakery", "Bakery", "Chocolate", "Cafe", "American Seafood", "American", "American", "Breakfast & Brunch", "Coffee & Tea", "Coffee & Tea", "Latin American", "Spanish", "Spanish", "Spanish", "British", "Thai"]
+    
+    var restaurantIsVisited = [Bool](count: 12, repeatedValue: false)
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -80,15 +82,23 @@ class RestaurantTableViewController: UITableViewController {
         let callAction = UIAlertAction(title: "Call " + "123-000-\(indexPath.row)", style: .Default , handler: callActionHandler)
         optionalMenu.addAction(callAction)
         
-        let isVisitedHere = UIAlertAction(title: "I've been here!", style: .Default, handler: {
+        let isVisitedHere = UIAlertAction(title: self.restaurantIsVisited[indexPath.row] ? "I've not been here!" : "I've been here!", style: .Default, handler: {
             
             (action: UIAlertAction!) -> Void in
             let cell = tableView.cellForRowAtIndexPath(indexPath)
-            cell?.accessoryType = .Checkmark
+            if self.restaurantIsVisited[indexPath.row] {
+                cell?.accessoryType = .None
+            }else {
+                cell?.accessoryType = .Checkmark
+                self.restaurantIsVisited[indexPath.row] = true
+                cell?.accessoryType = self.restaurantIsVisited[indexPath.row] ? .Checkmark : .None
+            }
         })
+        
         optionalMenu.addAction(isVisitedHere)
         
         self.presentViewController(optionalMenu, animated: true, completion: nil)
+        tableView.deselectRowAtIndexPath(indexPath, animated: false)
     }
 
     /*
