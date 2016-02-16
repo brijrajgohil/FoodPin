@@ -88,7 +88,7 @@ class RestaurantTableViewController: UITableViewController {
             let cell = tableView.cellForRowAtIndexPath(indexPath)
             if self.restaurantIsVisited[indexPath.row] {
                 cell?.accessoryType = .None
-            }else {
+            } else {
                 cell?.accessoryType = .Checkmark
                 self.restaurantIsVisited[indexPath.row] = true
                 cell?.accessoryType = self.restaurantIsVisited[indexPath.row] ? .Checkmark : .None
