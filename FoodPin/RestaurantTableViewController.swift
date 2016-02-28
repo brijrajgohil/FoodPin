@@ -97,18 +97,6 @@ class RestaurantTableViewController: UITableViewController {
 
     }
     
-    override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
-        if editingStyle == .Delete {
-            restaurantNames.removeAtIndex(indexPath.row)
-            restaurantImages.removeAtIndex(indexPath.row)
-            restaurantTypes.removeAtIndex(indexPath.row)
-            restaurantIsVisited.removeAtIndex(indexPath.row)
-            restaurantLocations.removeAtIndex(indexPath.row)
-        }
-        tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
-    }
-
-
     override func tableView(tableView: UITableView, editActionsForRowAtIndexPath indexPath: NSIndexPath) -> [UITableViewRowAction]? {
         //Social Sharing Button
         let shareAction = UITableViewRowAction(style: UITableViewRowActionStyle.Default, title: "Share", handler: {
@@ -133,7 +121,8 @@ class RestaurantTableViewController: UITableViewController {
             tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
             
         })
-        
+        shareAction.backgroundColor = UIColor(red: 28.0/255.0, green: 165.0/255.0, blue: 253.0/255.0, alpha: 1.0)
+        deleteAction.backgroundColor = UIColor(red: 202.0/255.0, green: 202.0/255.0, blue: 203.0/255.0, alpha: 1.0)
         return [deleteAction, shareAction]
     }
     /*
