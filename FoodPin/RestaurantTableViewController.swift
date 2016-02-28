@@ -96,6 +96,18 @@ class RestaurantTableViewController: UITableViewController {
         tableView.deselectRowAtIndexPath(indexPath, animated: false)
 
     }
+    
+    override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
+        if editingStyle == .Delete {
+            restaurantNames.removeAtIndex(indexPath.row)
+            restaurantImages.removeAtIndex(indexPath.row)
+            restaurantTypes.removeAtIndex(indexPath.row)
+            restaurantIsVisited.removeAtIndex(indexPath.row)
+            restaurantLocations.removeAtIndex(indexPath.row)
+        }
+        tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
+    }
+
 
     /*
     // MARK: - Navigation
