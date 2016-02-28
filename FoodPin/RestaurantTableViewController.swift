@@ -59,6 +59,18 @@ class RestaurantTableViewController: UITableViewController {
         return cell
     }
     
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "showRestaurantDetail" {
+            if let indexPath = tableView.indexPathForSelectedRow {
+                let destinationController = segue.destinationViewController as! RestaurantDetailViewController
+                destinationController.restaurantImage = restaurantImages[indexPath.row]
+                destinationController.restaurantLocation.text = restaurantLocations[indexPath.row]
+                destinationController.restaurantName.text = restaurantNames[indexPath.row]
+                destinationController.restaurantType.text = restaurantTypes[indexPath.row]
+            }
+        }
+    }
+    
     // MARK: - Table view delegate
     
 //    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {

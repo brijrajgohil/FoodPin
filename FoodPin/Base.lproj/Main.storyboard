@@ -74,7 +74,7 @@
                                     <outlet property="nameLabel" destination="7GM-HC-zWD" id="5Oj-6o-A2K"/>
                                     <outlet property="thumbnailImageView" destination="llE-A9-TED" id="VHj-y2-RK7"/>
                                     <outlet property="typeLabel" destination="Cxw-Pj-WhM" id="4B4-dQ-NuQ"/>
-                                    <segue destination="SUL-GP-NIl" kind="show" id="VYq-j2-Isl"/>
+                                    <segue destination="SUL-GP-NIl" kind="show" identifier="showRestaurantDetail" id="VYq-j2-Isl"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -89,10 +89,10 @@
             </objects>
             <point key="canvasLocation" x="1205" y="341"/>
         </scene>
-        <!--View Controller-->
+        <!--Restaurant Detail View Controller-->
         <scene sceneID="78d-ng-fDf">
             <objects>
-                <viewController id="SUL-GP-NIl" sceneMemberID="viewController">
+                <viewController id="SUL-GP-NIl" customClass="RestaurantDetailViewController" customModule="FoodPin" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="8Fq-6f-un6"/>
                         <viewControllerLayoutGuide type="bottom" id="A2a-jH-Yf4"/>
@@ -104,15 +104,48 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="wYY-7q-wSe">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                             </imageView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="PWr-L6-Jah">
+                                <rect key="frame" x="267" y="121" width="67" height="86"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eku-Al-EdB">
+                                        <rect key="frame" x="7" y="0.0" width="53" height="24"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="20"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Type" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="noI-Ck-7FR">
+                                        <rect key="frame" x="15" y="34" width="38" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Location" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NJ7-5a-WH7">
+                                        <rect key="frame" x="1" y="65" width="66" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="wYY-7q-wSe" firstAttribute="leading" secondItem="vKZ-fN-0rk" secondAttribute="leadingMargin" constant="-20" id="G7b-bL-4d4"/>
                             <constraint firstAttribute="trailingMargin" secondItem="wYY-7q-wSe" secondAttribute="trailing" constant="-20" id="Glw-5k-5Qr"/>
+                            <constraint firstItem="PWr-L6-Jah" firstAttribute="top" secondItem="8Fq-6f-un6" secondAttribute="bottom" constant="57" id="J2f-m1-YYb"/>
+                            <constraint firstItem="PWr-L6-Jah" firstAttribute="leading" secondItem="vKZ-fN-0rk" secondAttribute="leadingMargin" constant="247" id="L95-IV-bSm"/>
                             <constraint firstItem="A2a-jH-Yf4" firstAttribute="top" secondItem="wYY-7q-wSe" secondAttribute="bottom" id="QrE-og-N4b"/>
+                            <constraint firstItem="A2a-jH-Yf4" firstAttribute="top" secondItem="PWr-L6-Jah" secondAttribute="bottom" constant="393" id="S98-TI-8hI"/>
                             <constraint firstItem="wYY-7q-wSe" firstAttribute="top" secondItem="vKZ-fN-0rk" secondAttribute="topMargin" id="WNs-Fw-CMo"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="PWr-L6-Jah" secondAttribute="trailing" constant="246" id="giN-77-Wyq"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="restaurantImageView" destination="wYY-7q-wSe" id="Y1L-35-hoH"/>
+                        <outlet property="restaurantLocation" destination="NJ7-5a-WH7" id="rWX-Oj-NGV"/>
+                        <outlet property="restaurantName" destination="eku-Al-EdB" id="sqJ-GH-2mn"/>
+                        <outlet property="restaurantType" destination="noI-Ck-7FR" id="RKH-QO-ZTm"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Kq6-fA-dCf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
