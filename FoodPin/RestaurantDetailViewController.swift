@@ -2,22 +2,32 @@
 //  RestaurantDetailViewController.swift
 //  FoodPin
 //
-//  Created by Brijrajsinh Gohil on 28/02/16.
+//  Created by Brijrajsinh Gohil 28/1/2016.
 //  All rights reserved.
 //
+
 
 import UIKit
 
 class RestaurantDetailViewController: UIViewController {
+    @IBOutlet var restaurantImageView:UIImageView!
+    @IBOutlet var restaurantNameLabel:UILabel!
+    @IBOutlet var restaurantTypeLabel:UILabel!
+    @IBOutlet var restaurantLocationLabel:UILabel!
+    
+    var restaurantImage = ""
+    var restaurantName = ""
+    var restaurantType = ""
+    var restaurantLocation = ""
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
         restaurantImageView.image = UIImage(named: restaurantImage)
-        restaurantName.text = " "
-        restaurantType.text = " "
-        restaurantLocation.text = " "
+        restaurantNameLabel.text = restaurantName
+        restaurantTypeLabel.text = restaurantType
+        restaurantLocationLabel.text = restaurantLocation
     }
 
     override func didReceiveMemoryWarning() {
@@ -25,12 +35,6 @@ class RestaurantDetailViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    
-    @IBOutlet var restaurantImageView: UIImageView!
-    @IBOutlet var restaurantName: UILabel!
-    @IBOutlet var restaurantType: UILabel!
-    @IBOutlet var restaurantLocation: UILabel!
-    var restaurantImage = ""
 
     /*
     // MARK: - Navigation
