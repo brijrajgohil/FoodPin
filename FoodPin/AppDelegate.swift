@@ -2,7 +2,7 @@
 //  AppDelegate.swift
 //  FoodPin
 //
-//  Created by Brijrajsinh Gohil 28/1/2016.
+//  Created by Simon Ng on 28/1/16.
 //  All rights reserved.
 //
 
