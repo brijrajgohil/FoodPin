@@ -2,8 +2,8 @@
 //  AppDelegate.swift
 //  FoodPin
 //
-//  Created by Brijrajsinh Gohil on 13/01/16.
-//  Copyright © 2016 Brijrajsinh Gohil. All rights reserved.
+//  Created by Brijrajsinh Gohil on 28/2/16.
+//  All rights reserved.
 //
 
 import UIKit
