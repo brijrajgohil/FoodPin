@@ -109,6 +109,33 @@ class RestaurantTableViewController: UITableViewController {
     }
 
 
+    override func tableView(tableView: UITableView, editActionsForRowAtIndexPath indexPath: NSIndexPath) -> [UITableViewRowAction]? {
+        //Social Sharing Button
+        let shareAction = UITableViewRowAction(style: UITableViewRowActionStyle.Default, title: "Share", handler: {
+            (action, indexPath) -> Void in
+            let defaultText = "Just checking in at " + self.restaurantNames[indexPath.row]
+            
+            if let imageToShare = UIImage(named: self.restaurantImages[indexPath.row]) {
+                let activityController = UIActivityViewController(activityItems: [defaultText, imageToShare], applicationActivities: nil)
+                self.presentViewController(activityController, animated: true, completion: nil)
+            }
+        })
+        //Delete button
+        let deleteAction = UITableViewRowAction(style: UITableViewRowActionStyle.Default, title: "Delete", handler: {
+            (action, indexPath) -> Void in
+            //Delete row from the data source
+            self.restaurantNames.removeAtIndex(indexPath.row)
+            self.restaurantImages.removeAtIndex(indexPath.row)
+            self.restaurantTypes.removeAtIndex(indexPath.row)
+            self.restaurantIsVisited.removeAtIndex(indexPath.row)
+            self.restaurantLocations.removeAtIndex(indexPath.row)
+            
+            tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
+            
+        })
+        
+        return [deleteAction, shareAction]
+    }
     /*
     // MARK: - Navigation
 
