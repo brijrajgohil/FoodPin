@@ -21,6 +21,7 @@ class RestaurantDetailViewController: UIViewController, UITableViewDataSource, U
         restaurantImageView.image = UIImage(named: restaurant.image)
         tableView.backgroundColor = UIColor(red: 0.0/255.0, green: 240.0/255.0, blue: 240.0/255.0, alpha: 0.2)
         tableView.tableFooterView = UIView(frame: CGRectZero)
+        title = restaurant.name
     }
 
     override func didReceiveMemoryWarning() {
