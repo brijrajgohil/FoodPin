@@ -2,7 +2,7 @@
 //  RestaurantTableViewController.swift
 //  FoodPin
 //
-//  Created by Simon Ng on 28/1/16.
+//  Created by Brijrajsinh Gohil on 28/1/16.
 //  All rights reserved.
 //
 
