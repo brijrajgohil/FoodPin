@@ -23,6 +23,12 @@ class RestaurantDetailViewController: UIViewController, UITableViewDataSource, U
         tableView.tableFooterView = UIView(frame: CGRectZero)
         title = restaurant.name
     }
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(true)
+        navigationController?.hidesBarsOnSwipe = false
+        navigationController?.setNavigationBarHidden(false, animated: true)
+    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -30,7 +36,7 @@ class RestaurantDetailViewController: UIViewController, UITableViewDataSource, U
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 4
+        return 5
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
@@ -46,6 +52,9 @@ class RestaurantDetailViewController: UIViewController, UITableViewDataSource, U
             cell.fieldLabel.text = "Location"
             cell.valueLabel.text = restaurant.location
         case 3:
+            cell.fieldLabel.text = "Phone"
+            cell.valueLabel.text = restaurant.phone
+        case 4:
             cell.fieldLabel.text = "Been here"
             cell.valueLabel.text = (restaurant.isVisited) ? "Yes I've been here" : "No"
         default:
