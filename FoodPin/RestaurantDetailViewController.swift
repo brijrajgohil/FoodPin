@@ -2,7 +2,7 @@
 //  RestaurantDetailViewController.swift
 //  FoodPin
 //
-//  Created by Simon Ng on 28/1/16.
+//  Created by Brijrajsinh Gohil on 28/1/16.
 //  All rights reserved.
 //
 
@@ -11,12 +11,16 @@ import UIKit
 class RestaurantDetailViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     @IBOutlet var restaurantImageView:UIImageView!
     
+    @IBOutlet var tableView: UITableView!
+    
     var restaurant:Restaurant!
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         restaurantImageView.image = UIImage(named: restaurant.image)
+        tableView.backgroundColor = UIColor(red: 0.0/255.0, green: 240.0/255.0, blue: 240.0/255.0, alpha: 0.2)
+        tableView.tableFooterView = UIView(frame: CGRectZero)
     }
 
     override func didReceiveMemoryWarning() {
@@ -47,6 +51,7 @@ class RestaurantDetailViewController: UIViewController, UITableViewDataSource, U
             cell.fieldLabel.text = ""
             cell.valueLabel.text = ""
         }
+        cell.backgroundColor = UIColor.clearColor()
         return cell
     }
 
