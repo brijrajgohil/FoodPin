@@ -2,10 +2,9 @@
 //  Restaurant.swift
 //  FoodPin
 //
-//  Created by Simon Ng on 20/8/15.
-//  Copyright © 2015 AppCoda. All rights reserved.
+//  Created by Brijrajsinh Gohil on 14/8/15.
+//  All rights reserved.
 //
-
 import Foundation
 
 class Restaurant {

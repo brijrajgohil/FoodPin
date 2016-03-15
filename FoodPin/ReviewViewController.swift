@@ -2,8 +2,8 @@
 //  ReviewViewController.swift
 //  FoodPin
 //
-//  Created by Simon Ng on 27/8/15.
-//  Copyright © 2015 AppCoda. All rights reserved.
+//  Created by Brijrajsinh Gohil on 14/8/15.
+//  All rights reserved.
 //
 
 import UIKit

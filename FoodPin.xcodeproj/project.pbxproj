@@ -14,7 +14,7 @@
 		F4AAE2C21B7DAC29001D8E75 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F4AAE2C11B7DAC29001D8E75 /* Assets.xcassets */; };
 		F4AAE2C51B7DAC29001D8E75 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F4AAE2C31B7DAC29001D8E75 /* LaunchScreen.storyboard */; };
 		F4AAE2CD1B7DB3A9001D8E75 /* RestaurantTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4AAE2CC1B7DB3A9001D8E75 /* RestaurantTableViewController.swift */; };
-		F4C22D631B8EB8570006F752 /* ReviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4C22D621B8EB8570006F752 /* ReviewViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		F4C22D631B8EB8570006F752 /* ReviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4C22D621B8EB8570006F752 /* ReviewViewController.swift */; };
 		F4C566211B7EEB00008C8AEF /* RestaurantTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4C566201B7EEB00008C8AEF /* RestaurantTableViewCell.swift */; };
 		F4E27E811B84858F0015C354 /* RestaurantDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4E27E801B84858F0015C354 /* RestaurantDetailViewController.swift */; };
 /* End PBXBuildFile section */
@@ -106,7 +106,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastUpgradeCheck = 0700;
-				ORGANIZATIONNAME = AppCoda;
+				ORGANIZATIONNAME = "Brijrajsinh Gohil";
 				TargetAttributes = {
 					F4AAE2B61B7DAC29001D8E75 = {
 						CreatedOnToolsVersion = 7.0;
@@ -268,7 +268,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = FoodPin/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.appcoda.FoodPin;
+				PRODUCT_BUNDLE_IDENTIFIER = com.brijrajsinh.FoodPin;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -279,7 +279,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = FoodPin/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.appcoda.FoodPin;
+				PRODUCT_BUNDLE_IDENTIFIER = com.brijrajsinh.FoodPin;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
