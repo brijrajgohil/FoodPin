@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		593F6C191C9839F0006DC9F1 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 593F6C181C9839F0006DC9F1 /* MapKit.framework */; };
+		595A37121C98470000A6DD82 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 595A37111C98470000A6DD82 /* MapViewController.swift */; };
 		F424267E1B85B2FD0019B8F0 /* Restaurant.swift in Sources */ = {isa = PBXBuildFile; fileRef = F424267D1B85B2FD0019B8F0 /* Restaurant.swift */; };
 		F45820BA1B8AAC09000E50CC /* RestaurantDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45820B91B8AAC09000E50CC /* RestaurantDetailTableViewCell.swift */; };
 		F4AAE2BB1B7DAC29001D8E75 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4AAE2BA1B7DAC29001D8E75 /* AppDelegate.swift */; };
@@ -22,6 +23,7 @@
 
 /* Begin PBXFileReference section */
 		593F6C181C9839F0006DC9F1 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		595A37111C98470000A6DD82 /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		F424267D1B85B2FD0019B8F0 /* Restaurant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Restaurant.swift; sourceTree = "<group>"; };
 		F45820B91B8AAC09000E50CC /* RestaurantDetailTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RestaurantDetailTableViewCell.swift; sourceTree = "<group>"; };
 		F4AAE2B71B7DAC29001D8E75 /* FoodPin.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FoodPin.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -70,6 +72,7 @@
 			children = (
 				F4AAE2BA1B7DAC29001D8E75 /* AppDelegate.swift */,
 				F4AAE2BE1B7DAC29001D8E75 /* Main.storyboard */,
+				595A37111C98470000A6DD82 /* MapViewController.swift */,
 				F4AAE2C11B7DAC29001D8E75 /* Assets.xcassets */,
 				F4AAE2C31B7DAC29001D8E75 /* LaunchScreen.storyboard */,
 				F4AAE2C61B7DAC29001D8E75 /* Info.plist */,
@@ -165,6 +168,7 @@
 				F45820BA1B8AAC09000E50CC /* RestaurantDetailTableViewCell.swift in Sources */,
 				F4E27E811B84858F0015C354 /* RestaurantDetailViewController.swift in Sources */,
 				F4AAE2BB1B7DAC29001D8E75 /* AppDelegate.swift in Sources */,
+				595A37121C98470000A6DD82 /* MapViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
