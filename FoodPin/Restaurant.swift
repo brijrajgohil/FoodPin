@@ -14,6 +14,7 @@ class Restaurant {
     var location = ""
     var image = ""
     var phoneNumber = ""
+    var rating = ""
     var isVisited = false
     
     init(name:String, type:String, location:String, phoneNumber:String, image:String, isVisited:Bool) {

@@ -187,6 +187,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="ratingButton" destination="Nia-wZ-ri0" id="fRU-RA-lMn"/>
                         <outlet property="restaurantImageView" destination="F42-dL-fKZ" id="ejK-gS-qBP"/>
                         <outlet property="tableView" destination="umX-UD-jKi" id="gI5-TN-Ulq"/>
                     </connections>
@@ -222,7 +223,7 @@
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="epU-10-fsH">
                                 <rect key="frame" x="185" y="251" width="230" height="70"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wx3-8V-G3T">
+                                    <button opaque="NO" tag="100" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wx3-8V-G3T">
                                         <rect key="frame" x="0.0" y="0.0" width="70" height="70"/>
                                         <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
@@ -236,8 +237,11 @@
                                                 <integer key="value" value="35"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="ratingSelected:" destination="6gj-oN-3HA" eventType="touchUpInside" id="Usc-WF-iBA"/>
+                                        </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wOu-4O-sLI">
+                                    <button opaque="NO" tag="200" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wOu-4O-sLI">
                                         <rect key="frame" x="80" y="0.0" width="70" height="70"/>
                                         <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
@@ -251,8 +255,11 @@
                                                 <integer key="value" value="35"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="ratingSelected:" destination="6gj-oN-3HA" eventType="touchUpInside" id="HXL-ip-0No"/>
+                                        </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SAj-uI-80I">
+                                    <button opaque="NO" tag="300" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SAj-uI-80I">
                                         <rect key="frame" x="160" y="0.0" width="70" height="70"/>
                                         <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
@@ -266,6 +273,9 @@
                                                 <integer key="value" value="35"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="ratingSelected:" destination="6gj-oN-3HA" eventType="touchUpInside" id="Cnc-d6-jQ7"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <constraints>
@@ -331,7 +341,7 @@
                                 </constraints>
                                 <state key="normal" image="close"/>
                                 <connections>
-                                    <segue destination="LYz-Pc-Ssl" kind="unwind" unwindAction="close:" id="STI-le-ceo"/>
+                                    <segue destination="LYz-Pc-Ssl" kind="unwind" identifier="unwindToDetailView" unwindAction="close:" id="STI-le-ceo"/>
                                 </connections>
                             </button>
                         </subviews>

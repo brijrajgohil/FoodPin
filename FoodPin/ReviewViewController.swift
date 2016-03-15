@@ -10,6 +10,8 @@ import UIKit
 
 class ReviewViewController: UIViewController {
 
+    var rating: String!
+    
     @IBOutlet weak var ratingStackView: UIStackView!
     @IBOutlet weak var backgroundImageView: UIImageView!
     override func viewDidLoad() {
@@ -29,6 +31,15 @@ class ReviewViewController: UIViewController {
             }, completion: nil)
     }
 
+    @IBAction func ratingSelected(sender: UIButton) {
+        switch sender.tag {
+        case 100: rating = "dislike"
+        case 200: rating = "good"
+        case 300: rating = "great"
+        default: break
+        }
+        performSegueWithIdentifier("unwindToDetailView", sender: sender)
+    }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
