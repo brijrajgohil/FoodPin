@@ -2,8 +2,8 @@
 //  Restaurant.swift
 //  FoodPin
 //
-//  Created by Brijrajsinh Gohil on 28/1/16.
-//  All rights reserved.
+//  Created by Simon Ng on 20/8/15.
+//  Copyright © 2015 AppCoda. All rights reserved.
 //
 
 import Foundation
@@ -12,10 +12,10 @@ class Restaurant {
     var name = ""
     var type = ""
     var location = ""
-    var image = ""
     var phoneNumber = ""
-    var rating = ""
+    var image = ""
     var isVisited = false
+    var rating = ""
     
     init(name:String, type:String, location:String, phoneNumber:String, image:String, isVisited:Bool) {
         self.name = name

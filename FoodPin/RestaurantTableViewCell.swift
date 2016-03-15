@@ -2,8 +2,8 @@
 //  RestaurantTableViewCell.swift
 //  FoodPin
 //
-//  Created by Brijrajsinh Gohil on 28/1/16.
-//  All rights reserved.
+//  Created by Simon Ng on 15/8/15.
+//  Copyright © 2015 AppCoda. All rights reserved.
 //
 
 import UIKit
