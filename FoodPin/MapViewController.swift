@@ -16,6 +16,10 @@ class MapViewController: UIViewController, MKMapViewDelegate {
     var restaurant: Restaurant!
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        mapView.showsTraffic = true
+        mapView.showsScale = true
+        mapView.showsCompass = true
         //Convert add to coordinate and annotate it to the map
         let geoCoder = CLGeocoder()
         geoCoder.geocodeAddressString(restaurant.location, completionHandler: {
@@ -63,6 +67,7 @@ class MapViewController: UIViewController, MKMapViewDelegate {
         let leftIconView = UIImageView(frame: CGRectMake(0, 0, 53, 53))
         leftIconView.image = UIImage(named: restaurant.image)
         annotationView?.leftCalloutAccessoryView = leftIconView
+        annotationView?.pinTintColor = UIColor.orangeColor()
         return annotationView
     }
     /*
