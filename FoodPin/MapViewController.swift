@@ -57,7 +57,13 @@ class MapViewController: UIViewController, MKMapViewDelegate {
         var annotationView: MKPinAnnotationView? = mapView.dequeueReusableAnnotationViewWithIdentifier(identifier) as? MKPinAnnotationView
         if annotationView == nil {
             annotationView = MKPinAnnotationView(annotation: annotation, reuseIdentifier: identifier)
+            annotationView?.canShowCallout = true
         }
+        
+        let leftIconView = UIImageView(frame: CGRectMake(0, 0, 53, 53))
+        leftIconView.image = UIImage(named: restaurant.image)
+        annotationView?.leftCalloutAccessoryView = leftIconView
+        return annotationView
     }
     /*
     // MARK: - Navigation
