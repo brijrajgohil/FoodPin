@@ -220,7 +220,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="q2X-aF-CZQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1784" y="341"/>
+            <point key="canvasLocation" x="1004" y="423"/>
         </scene>
         <!--Map View Controller-->
         <scene sceneID="P5f-Mk-H5a">
@@ -252,7 +252,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="w8j-XM-Xgg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3306" y="10"/>
+            <point key="canvasLocation" x="1821" y="423"/>
         </scene>
         <!--New Restaurant-->
         <scene sceneID="jWJ-ug-JfC">
@@ -273,15 +273,11 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="photoalbum" translatesAutoresizingMaskIntoConstraints="NO" id="1Yb-PP-Us4">
-                                                    <rect key="frame" x="250" y="82" width="100" height="85"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" constant="100" id="M3g-iJ-ZHF"/>
-                                                    </constraints>
+                                                    <rect key="frame" x="258" y="83" width="84" height="84"/>
                                                 </imageView>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="1Yb-PP-Us4" firstAttribute="centerY" secondItem="j7Y-sX-CYC" secondAttribute="centerY" id="3zv-zP-uPF"/>
-                                                <constraint firstItem="1Yb-PP-Us4" firstAttribute="top" secondItem="j7Y-sX-CYC" secondAttribute="topMargin" constant="74" id="8Eh-Ve-MfC"/>
                                                 <constraint firstItem="1Yb-PP-Us4" firstAttribute="centerX" secondItem="j7Y-sX-CYC" secondAttribute="centerX" id="IVM-wI-lID"/>
                                             </constraints>
                                         </tableViewCellContentView>
@@ -399,6 +395,9 @@
                                                     <state key="normal" title="YES">
                                                         <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                     </state>
+                                                    <connections>
+                                                        <action selector="toggleBeenHereButton:" destination="1hW-1j-HaA" eventType="touchUpInside" id="vZH-Nj-plv"/>
+                                                    </connections>
                                                 </button>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BDQ-Uy-LFh">
                                                     <rect key="frame" x="61" y="33" width="45" height="30"/>
@@ -409,6 +408,9 @@
                                                     <state key="normal" title="NO">
                                                         <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     </state>
+                                                    <connections>
+                                                        <action selector="toggleBeenHereButton:" destination="1hW-1j-HaA" eventType="touchUpInside" id="C06-fK-Zri"/>
+                                                    </connections>
                                                 </button>
                                             </subviews>
                                             <constraints>
@@ -435,12 +437,25 @@
                                 <segue destination="lr9-cl-RPa" kind="unwind" unwindAction="unwindToHomeScreen:" id="tBM-qs-pmw"/>
                             </connections>
                         </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="bzl-jo-tTu">
+                            <connections>
+                                <action selector="save:" destination="1hW-1j-HaA" id="qZU-nU-tu1"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="imageView" destination="1Yb-PP-Us4" id="mBc-ZD-680"/>
+                        <outlet property="locationTextField" destination="haW-Ek-xfJ" id="GNr-eK-W7S"/>
+                        <outlet property="nameTextField" destination="c5r-rl-E3M" id="cHg-8Q-0MW"/>
+                        <outlet property="noButton" destination="BDQ-Uy-LFh" id="gcM-wM-dfm"/>
+                        <outlet property="typeTextField" destination="OTl-df-ha1" id="vjt-Gb-hUO"/>
+                        <outlet property="yesButton" destination="dSh-bY-J4K" id="YSm-9J-0ZZ"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="w9c-PC-fMM" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="lr9-cl-RPa" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="2519" y="-415"/>
+            <point key="canvasLocation" x="2519" y="-369"/>
         </scene>
         <!--Review View Controller-->
         <scene sceneID="yd4-Ss-iUj">
@@ -563,7 +578,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0km-vb-fBH" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="yBz-hs-5gM" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="2607" y="925"/>
+            <point key="canvasLocation" x="1004" y="1243"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="i2W-0O-x50">
@@ -581,7 +596,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2ji-xH-yxS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="393" y="341"/>
+            <point key="canvasLocation" x="235" y="-369"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="xCQ-69-KRy">
@@ -599,7 +614,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ykx-2m-ecS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1707" y="-415"/>
+            <point key="canvasLocation" x="1727" y="-369"/>
         </scene>
     </scenes>
     <resources>
