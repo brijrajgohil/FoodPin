@@ -2,8 +2,8 @@
 //  RestaurantTableViewController.swift
 //  FoodPin
 //
-//  Created by Brijrajsinh Gohil on 14/8/15.
-//  All rights reserved.
+//  Created by Brijrajsinh Gohil.
+//  Copyright © 2016 Brijrajsinh Gohil. All rights reserved.
 //
 
 import UIKit
@@ -33,10 +33,6 @@ class RestaurantTableViewController: UITableViewController {
         Restaurant(name: "Thai Cafe", type: "Thai", location: "22 Charlwood Street London SW1V 2DY Pimlico", phoneNumber: "432-344050", image: "thaicafe.jpg", isVisited: false)
     ]
     
-    
-    @IBAction func unwindToHomeScreen(segue: UIStoryboardSegue) {
-        
-    }
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -137,5 +133,7 @@ class RestaurantTableViewController: UITableViewController {
         }
     }
     
+    @IBAction func unwindToHomeScreen(segue:UIStoryboardSegue) {
+    }
 
 }

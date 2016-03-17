@@ -2,8 +2,8 @@
 //  RestaurantDetailViewController.swift
 //  FoodPin
 //
-//  Created by Brijrajsinh Gohil on 14/8/15.
-//  All rights reserved.
+//  Created by Brijrajsinh Gohil.
+//  Copyright © 2016 Brijrajsinh Gohil. All rights reserved.
 //
 
 import UIKit
@@ -103,6 +103,9 @@ class RestaurantDetailViewController: UIViewController, UITableViewDataSource, U
     }
     
     
+    // MARK: - Navigation
+
+    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "showMap" {
             let destinationController = segue.destinationViewController as! MapViewController
@@ -110,14 +113,5 @@ class RestaurantDetailViewController: UIViewController, UITableViewDataSource, U
         }
     }
     
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }
