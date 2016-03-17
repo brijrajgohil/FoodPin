@@ -5,6 +5,7 @@
 //  Created by Brijrajsinh Gohil.
 //  Copyright © 2016 Brijrajsinh Gohil. All rights reserved.
 //
+
 import UIKit
 
 class RestaurantTableViewCell: UITableViewCell {
