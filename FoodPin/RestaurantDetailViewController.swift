@@ -41,7 +41,7 @@ class RestaurantDetailViewController: UIViewController, UITableViewDataSource, U
 
         // Set the rating of the restaurant
         if let rating = restaurant.rating where rating != "" {
-            ratingButton.setImage(UIImage(named: restaurant.rating!), forState: .Normal)
+            ratingButton.setImage(UIImage(named: rating), forState: UIControlState.Normal)
         }
         
     }
@@ -82,7 +82,7 @@ class RestaurantDetailViewController: UIViewController, UITableViewDataSource, U
         case 4:
             cell.fieldLabel.text = "Been here"
             if let isVisited = restaurant.isVisited?.boolValue {
-                cell.valueLabel.text = isVisited ? "Yes, I've been here" : "No"
+                cell.valueLabel.text = isVisited ? "Yes, I've been here before" : "No"
             }
         default:
             cell.fieldLabel.text = ""
@@ -102,6 +102,7 @@ class RestaurantDetailViewController: UIViewController, UITableViewDataSource, U
                 ratingButton.setImage(UIImage(named: rating), forState: UIControlState.Normal)
                 
                 if let managedObjectContext = (UIApplication.sharedApplication().delegate as? AppDelegate)?.managedObjectContext {
+                    
                     do {
                         try managedObjectContext.save()
                     } catch {

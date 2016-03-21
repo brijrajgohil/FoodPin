@@ -10,18 +10,16 @@ import UIKit
 import CoreData
 
 class RestaurantTableViewController: UITableViewController, NSFetchedResultsControllerDelegate, UISearchResultsUpdating {
-    
     var restaurants:[Restaurant] = []
-    var fetchResultController: NSFetchedResultsController!
-    var searchController: UISearchController!
-    var searchResults: [Restaurant] = []
+    
+    var fetchResultController:NSFetchedResultsController!
+    
+    var searchController:UISearchController!
+    var searchResults:[Restaurant] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        searchController.searchResultsUpdater = self
-        searchController.dimsBackgroundDuringPresentation = false
-        
         // Remove the title of the back button
         navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .Plain, target: nil, action: nil)
         
@@ -29,10 +27,13 @@ class RestaurantTableViewController: UITableViewController, NSFetchedResultsCont
         tableView.estimatedRowHeight = 36.0
         tableView.rowHeight = UITableViewAutomaticDimension
         
+        // Load the restaurants from database
         let fetchRequest = NSFetchRequest(entityName: "Restaurant")
         let sortDescriptor = NSSortDescriptor(key: "name", ascending: true)
         fetchRequest.sortDescriptors = [sortDescriptor]
+        
         if let managedObjectContext = (UIApplication.sharedApplication().delegate as? AppDelegate)?.managedObjectContext {
+            
             fetchResultController = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: managedObjectContext, sectionNameKeyPath: nil, cacheName: nil)
             fetchResultController.delegate = self
             
@@ -42,18 +43,28 @@ class RestaurantTableViewController: UITableViewController, NSFetchedResultsCont
             } catch {
                 print(error)
             }
-            
         }
         
+        // Adding a search bar
         searchController = UISearchController(searchResultsController: nil)
         tableView.tableHeaderView = searchController.searchBar
+        searchController.searchResultsUpdater = self
+        searchController.dimsBackgroundDuringPresentation = false
+        
+        // Customize the appearance of the search bar
+        searchController.searchBar.placeholder = "Search restaurants..."
+        searchController.searchBar.tintColor = UIColor(red: 100.0/255.0, green: 100.0/255.0, blue: 100.0/255.0, alpha: 1.0)
+        searchController.searchBar.barTintColor = UIColor(red: 240.0/255.0, green: 240.0/255.0, blue: 240.0/255.0, alpha: 0.6)
+
     }
 
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
+        
         navigationController?.hidesBarsOnSwipe = true
+
     }
-    
+
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -68,8 +79,7 @@ class RestaurantTableViewController: UITableViewController, NSFetchedResultsCont
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if searchController.active {
             return searchResults.count
-        }
-        else {
+        } else {
             return restaurants.count
         }
     }
@@ -80,14 +90,16 @@ class RestaurantTableViewController: UITableViewController, NSFetchedResultsCont
         let cell = tableView.dequeueReusableCellWithIdentifier(cellIdentifier, forIndexPath: indexPath) as! RestaurantTableViewCell
         
         let restaurant = (searchController.active) ? searchResults[indexPath.row] : restaurants[indexPath.row]
+        
         // Configure the cell...
         cell.nameLabel.text = restaurant.name
         cell.thumbnailImageView.image = UIImage(data: restaurant.image!)
         cell.locationLabel.text = restaurant.location
         cell.typeLabel.text = restaurant.type
+        
         if let isVisited = restaurant.isVisited?.boolValue {
             cell.accessoryType = isVisited ? .Checkmark : .None
-            }
+        }
         
         return cell
     }
@@ -102,15 +114,6 @@ class RestaurantTableViewController: UITableViewController, NSFetchedResultsCont
         }
         
         tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
-    }
-    
-    override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-        if searchController.active {
-            return false
-        }
-        else {
-            return true
-        }
     }
     
     override func tableView(tableView: UITableView, editActionsForRowAtIndexPath indexPath: NSIndexPath) -> [UITableViewRowAction]? {
@@ -128,7 +131,9 @@ class RestaurantTableViewController: UITableViewController, NSFetchedResultsCont
         // Delete button
         let deleteAction = UITableViewRowAction(style: UITableViewRowActionStyle.Default, title: "Delete",handler: { (action, indexPath) -> Void in
             
+            // Delete the row from the database
             if let managedObjectContext = (UIApplication.sharedApplication().delegate as? AppDelegate)?.managedObjectContext {
+                
                 let restaurantToDelete = self.fetchResultController.objectAtIndexPath(indexPath) as! Restaurant
                 managedObjectContext.deleteObject(restaurantToDelete)
                 
@@ -146,6 +151,14 @@ class RestaurantTableViewController: UITableViewController, NSFetchedResultsCont
 
         return [deleteAction, shareAction]
     }
+    
+    override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
+        if searchController.active {
+            return false
+        } else {
+            return true
+        }
+    }
 
     
     // MARK: - Navigation
@@ -160,12 +173,18 @@ class RestaurantTableViewController: UITableViewController, NSFetchedResultsCont
         }
     }
     
+    @IBAction func unwindToHomeScreen(segue:UIStoryboardSegue) {
+    }
+    
+    
+    // MARK: - NSFetchedResultsControllerDelegate
     
     func controllerWillChangeContent(controller: NSFetchedResultsController) {
         tableView.beginUpdates()
     }
     
     func controller(controller: NSFetchedResultsController, didChangeObject anObject: AnyObject, atIndexPath indexPath: NSIndexPath?, forChangeType type: NSFetchedResultsChangeType, newIndexPath: NSIndexPath?) {
+            
         switch type {
         case .Insert:
             if let _newIndexPath = newIndexPath {
@@ -179,25 +198,19 @@ class RestaurantTableViewController: UITableViewController, NSFetchedResultsCont
             if let _indexPath = indexPath {
                 tableView.reloadRowsAtIndexPaths([_indexPath], withRowAnimation: .Fade)
             }
+        
         default:
             tableView.reloadData()
         }
+            
         restaurants = controller.fetchedObjects as! [Restaurant]
     }
     
     func controllerDidChangeContent(controller: NSFetchedResultsController) {
         tableView.endUpdates()
     }
-    
-    @IBAction func unwindToHomeScreen(segue:UIStoryboardSegue) {
-    }
 
-    func filterContentForSearchText(searchText: String) {
-        searchResults = restaurants.filter({ (restaurant: Restaurant) -> Bool in
-            let nameMatch = restaurant.name.rangeOfString(searchText, options: NSStringCompareOptions.CaseInsensitiveSearch)
-            return nameMatch != nil
-        })
-    }
+    // MARK: - Search
     
     func updateSearchResultsForSearchController(searchController: UISearchController) {
         if let searchText = searchController.searchBar.text {
@@ -206,4 +219,13 @@ class RestaurantTableViewController: UITableViewController, NSFetchedResultsCont
         }
     }
     
+    func filterContentForSearchText(searchText: String) {
+        searchResults = restaurants.filter({ (restaurant:Restaurant) -> Bool in
+            let nameMatch = restaurant.name.rangeOfString(searchText, options: NSStringCompareOptions.CaseInsensitiveSearch)
+            let locationMatch = restaurant.location.rangeOfString(searchText, options: NSStringCompareOptions.CaseInsensitiveSearch)
+        
+            return nameMatch != nil || locationMatch != nil
+        })
+    }
 }
+

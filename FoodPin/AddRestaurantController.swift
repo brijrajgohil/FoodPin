@@ -10,18 +10,18 @@ import UIKit
 import CoreData
 
 class AddRestaurantController: UITableViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
-    
-    var restaurant: Restaurant!
-    
     @IBOutlet var imageView:UIImageView!
+
     @IBOutlet var nameTextField:UITextField!
     @IBOutlet var typeTextField:UITextField!
     @IBOutlet var locationTextField:UITextField!
-    @IBOutlet weak var phoneTextField: UITextField!
+    @IBOutlet var phoneNumberTextField:UITextField!
     @IBOutlet var yesButton:UIButton!
     @IBOutlet var noButton:UIButton!
     
     var isVisited = true
+    
+    var restaurant:Restaurant!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -79,10 +79,10 @@ class AddRestaurantController: UITableViewController, UIImagePickerControllerDel
         let name = nameTextField.text
         let type = typeTextField.text
         let location = locationTextField.text
-        let phone = phoneTextField.text
+        let phoneNumber = phoneNumberTextField.text
         
         // Validate input fields
-        if name == "" || type == "" || location == "" || phone == "" {
+        if name == "" || type == "" || location == "" {
             let alertController = UIAlertController(title: "Oops", message: "We can't proceed because one of the fields is blank. Please note that all fields are required.", preferredStyle: UIAlertControllerStyle.Alert)
             alertController.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: nil))
             self.presentViewController(alertController, animated: true, completion: nil)
@@ -95,7 +95,8 @@ class AddRestaurantController: UITableViewController, UIImagePickerControllerDel
             restaurant.name = name!
             restaurant.type = type!
             restaurant.location = location!
-            restaurant.phoneNumber = phone!
+            restaurant.phoneNumber = phoneNumber!
+            
             if let restaurantImage = imageView.image {
                 restaurant.image = UIImagePNGRepresentation(restaurantImage)
             }
@@ -108,14 +109,6 @@ class AddRestaurantController: UITableViewController, UIImagePickerControllerDel
                 return
             }
         }
-        
-        // Print input data to console
-        print("Name: \(name)")
-        print("Type: \(type)")
-        print("Location: \(location)")
-        print("Phone \(phone)")
-        print("Have you been here: \(isVisited)")
-        
         
         // Dismiss the view controller
         dismissViewControllerAnimated(true, completion: nil)
