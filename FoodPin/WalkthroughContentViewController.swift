@@ -13,9 +13,17 @@ class WalkthroughContentViewController: UIViewController {
     @IBOutlet weak var headingLabel: UILabel!
     @IBOutlet weak var contentImageView: UIImageView!
     @IBOutlet weak var contentLabel: UILabel!
+    
+    var index = 0
+    var heading = ""
+    var imageFile = ""
+    var content = ""
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        headingLabel.text = heading
+        contentLabel.text = content
+        contentImageView.image = UIImage(named: imageFile)
         // Do any additional setup after loading the view.
     }
 
