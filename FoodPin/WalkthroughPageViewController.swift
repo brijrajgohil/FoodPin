@@ -22,8 +22,9 @@ class WalkthroughPageViewController: UIPageViewController, UIPageViewControllerD
 
         dataSource = self
         
-        let startingViewController = viewControllerAtIndex(0)
-        setViewControllers([startingViewController], direction: .Forward, animated: true, completion: nil)
+        if let startingViewController = viewControllerAtIndex(0) {
+            setViewControllers([startingViewController], direction: .Forward, animated: true, completion: nil)
+        }
         // Do any additional setup after loading the view.
     }
 
@@ -46,8 +47,9 @@ class WalkthroughPageViewController: UIPageViewController, UIPageViewControllerD
         return viewControllerAtIndex(index)
     }
 
-    func viewControllerAtIndex(index: Int) -> WalkthroughContentViewController {
+    func viewControllerAtIndex(index: Int) -> WalkthroughContentViewController? {
         if index == NSNotFound || index < 0 || index >= pageHeadings.count {
+            return nil
         }
         
         //Create a new view controller and pass suitable data
@@ -59,6 +61,18 @@ class WalkthroughPageViewController: UIPageViewController, UIPageViewControllerD
             pageContentViewController.index = index
             return pageContentViewController
         }
+        return nil
+    }
+    
+    func presentationCountForPageViewController(pageViewController: UIPageViewController) -> Int {
+        return pageHeadings.count
+    }
+    
+    func presentationIndexForPageViewController(pageViewController: UIPageViewController) -> Int {
+        if let pageContentViewController = storyboard?.instantiateViewControllerWithIdentifier("WalkthroughContentViewController") as? WalkthroughContentViewController {
+            return pageContentViewController.index
+        }
+        return 0
     }
     /*
     // MARK: - Navigation
