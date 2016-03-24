@@ -2,7 +2,7 @@
 //  WalkthroughContentViewController.swift
 //  FoodPin
 //
-//  Created by Brijrajsinh Gohil on 21/03/16.
+//  Created by Brijrajsinh Gohil.
 //  Copyright © 2016 Brijrajsinh Gohil. All rights reserved.
 //
 
@@ -10,30 +10,34 @@ import UIKit
 
 class WalkthroughContentViewController: UIViewController {
 
-    @IBOutlet weak var pageControl: UIPageControl!
-    @IBOutlet weak var headingLabel: UILabel!
-    @IBOutlet weak var contentImageView: UIImageView!
-    @IBOutlet weak var contentLabel: UILabel!
-    @IBOutlet weak var forwardButton: UIButton!
+    @IBOutlet var headingLabel:UILabel!
+    @IBOutlet var contentLabel:UILabel!
+    @IBOutlet var contentImageView:UIImageView!
+    @IBOutlet var pageControl:UIPageControl!
+    @IBOutlet var forwardButton:UIButton!
     
     var index = 0
     var heading = ""
     var imageFile = ""
     var content = ""
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        pageControl.currentPage = index
         headingLabel.text = heading
         contentLabel.text = content
         contentImageView.image = UIImage(named: imageFile)
-        // Do any additional setup after loading the view.
         
-        if case 0...1 = index {
-            forwardButton.setTitle("NEXT", forState: .Normal)
-        } else if case 2 = index {
-            forwardButton.setTitle("DONE", forState: .Normal)
+        // Set the current page
+        pageControl.currentPage = index
+        
+        // Change the forward button's title
+        switch index {
+        case 0...1: forwardButton.setTitle("NEXT", forState: UIControlState.Normal)
+        case 2: forwardButton.setTitle("DONE", forState: UIControlState.Normal)
+        default: break
         }
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -41,16 +45,25 @@ class WalkthroughContentViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    @IBAction func buttonTapped(sender: UIButton) {
-        if case 0...1 = index {
+    
+    @IBAction func nextButtonTapped(sender: UIButton) {
+        
+        switch index {
+        case 0...1:
             let pageViewController = parentViewController as! WalkthroughPageViewController
             pageViewController.forward(index)
-        }
-        else if case 2 = index {
+            
+        case 2:
+            let defaults = NSUserDefaults.standardUserDefaults()
+            defaults.setBool(true, forKey: "hasViewedWalkthrough")
+            
             dismissViewControllerAnimated(true, completion: nil)
+            
+        default: break
+            
         }
+        
     }
-    
 
     /*
     // MARK: - Navigation
