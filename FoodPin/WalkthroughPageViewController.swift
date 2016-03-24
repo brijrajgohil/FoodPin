@@ -64,16 +64,22 @@ class WalkthroughPageViewController: UIPageViewController, UIPageViewControllerD
         return nil
     }
     
-    func presentationCountForPageViewController(pageViewController: UIPageViewController) -> Int {
-        return pageHeadings.count
+    func forward(index: Int) {
+        if let nextViewController = viewControllerAtIndex(index + 1) {
+            setViewControllers([nextViewController], direction: .Forward, animated: true, completion: nil)
+        }
     }
     
-    func presentationIndexForPageViewController(pageViewController: UIPageViewController) -> Int {
-        if let pageContentViewController = storyboard?.instantiateViewControllerWithIdentifier("WalkthroughContentViewController") as? WalkthroughContentViewController {
-            return pageContentViewController.index
-        }
-        return 0
-    }
+    //    func presentationCountForPageViewController(pageViewController: UIPageViewController) -> Int {
+    //        return pageHeadings.count
+    //    }
+    //    
+    //    func presentationIndexForPageViewController(pageViewController: UIPageViewController) -> Int {
+    //        if let pageContentViewController = storyboard?.instantiateViewControllerWithIdentifier("WalkthroughContentViewController") as? WalkthroughContentViewController {
+    //            return pageContentViewController.index
+    //        }
+    //        return 0
+    //    }
     /*
     // MARK: - Navigation
 
