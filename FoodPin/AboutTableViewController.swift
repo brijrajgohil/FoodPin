@@ -7,12 +7,19 @@
 //
 
 import UIKit
+import SafariServices
 
 class AboutTableViewController: UITableViewController {
 
+    var sectionTitles = ["Leave Feedback", "Follow Us"]
+    var sectionContent = [["Rate us on App Store", "Tell us your feedback"], ["Twitter", "Facebook", "Pinterest"]]
+    var links = ["https://twitter.com/", "https://www.facebook.com/", "https://www.pinterest.com/appcoda/"]
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        tableView.tableFooterView = UIView(frame: CGRectZero)
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -29,23 +36,47 @@ class AboutTableViewController: UITableViewController {
 
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 2
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 0
+        if section == 0 {
+            return 2
+        }
+        else {
+            return 3
+        }
+    }
+    
+    override func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return sectionTitles[section]
     }
 
-    /*
+    
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifier", forIndexPath: indexPath)
-
-        // Configure the cell...
+        let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath)
+        cell.textLabel?.text = sectionContent[indexPath.section][indexPath.row]
 
         return cell
     }
-    */
+    
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        switch indexPath.section {
+        case 0:
+            if indexPath.row == 0 {
+                if let url = NSURL(string: "http://www.apple.com/itunes/charts/paid-apps/") {
+                    UIApplication.sharedApplication().openURL(url)
+                }
+            }
+            else if indexPath.row == 1 {
+                performSegueWithIdentifier("showWebView", sender: self)
+            }
+        default:
+            break
+        }
+        tableView.deselectRowAtIndexPath(indexPath, animated: false)
+    }
 
     /*
     // Override to support conditional editing of the table view.
