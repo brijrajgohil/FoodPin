@@ -28,6 +28,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Change the status bar's appearance
         UIApplication.sharedApplication().statusBarStyle = .LightContent
         
+        
+        UITabBar.appearance().barTintColor = UIColor.blackColor()
+        UITabBar.appearance().backgroundImage = UIImage(named: "tabbar-background")
+        
         return true
     }
 
