@@ -29,8 +29,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         UIApplication.sharedApplication().statusBarStyle = .LightContent
         
         
-        UITabBar.appearance().barTintColor = UIColor.blackColor()
-        UITabBar.appearance().backgroundImage = UIImage(named: "tabbar-background")
+        UITabBar.appearance().selectionIndicatorImage = UIImage(named: "tabitem-selected")
         
         return true
     }
