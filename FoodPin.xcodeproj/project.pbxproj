@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		592116681CA8190F0086F865 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5921166A1CA8190F0086F865 /* Localizable.strings */; };
 		5921166D1CA8190F0086F865 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5921166F1CA8190F0086F865 /* InfoPlist.strings */; };
+		5951382D1CA8638D00F494CA /* aboutfoodpin.png in Resources */ = {isa = PBXBuildFile; fileRef = 5951382F1CA8638D00F494CA /* aboutfoodpin.png */; };
 		5974EE011CA5B4FB0049D807 /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5974EE001CA5B4FB0049D807 /* WebViewController.swift */; };
 		597A818E1CA5494F00EB0C22 /* about.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 597A818C1CA5494F00EB0C22 /* about.storyboard */; };
 		597A81911CA549B500EB0C22 /* discover.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 597A818F1CA549B500EB0C22 /* discover.storyboard */; };
@@ -44,6 +45,9 @@
 		592116761CA8198E0086F865 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Main.strings; sourceTree = "<group>"; };
 		592116771CA8198F0086F865 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/discover.strings; sourceTree = "<group>"; };
 		592116781CA8198F0086F865 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		5951382E1CA8638D00F494CA /* Base */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Base; path = Base.lproj/aboutfoodpin.png; sourceTree = "<group>"; };
+		595138301CA863A400F494CA /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "zh-Hant"; path = "zh-Hant.lproj/aboutfoodpin.png"; sourceTree = "<group>"; };
+		595138311CA863A700F494CA /* de */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = de; path = de.lproj/aboutfoodpin.png; sourceTree = "<group>"; };
 		5974EE001CA5B4FB0049D807 /* WebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
 		597A818D1CA5494F00EB0C22 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/about.storyboard; sourceTree = "<group>"; };
 		597A81901CA549B500EB0C22 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/discover.storyboard; sourceTree = "<group>"; };
@@ -80,6 +84,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5951382A1CA8632A00F494CA /* images */ = {
+			isa = PBXGroup;
+			children = (
+				5951382F1CA8638D00F494CA /* aboutfoodpin.png */,
+			);
+			name = images;
+			sourceTree = "<group>";
+		};
 		F4AAE2AE1B7DAC29001D8E75 = {
 			isa = PBXGroup;
 			children = (
@@ -101,6 +113,7 @@
 		F4AAE2B91B7DAC29001D8E75 /* FoodPin */ = {
 			isa = PBXGroup;
 			children = (
+				5951382A1CA8632A00F494CA /* images */,
 				5921166F1CA8190F0086F865 /* InfoPlist.strings */,
 				5921166A1CA8190F0086F865 /* Localizable.strings */,
 				F4AAE2BA1B7DAC29001D8E75 /* AppDelegate.swift */,
@@ -172,6 +185,8 @@
 			knownRegions = (
 				en,
 				Base,
+				"zh-Hant",
+				de,
 			);
 			mainGroup = F4AAE2AE1B7DAC29001D8E75;
 			productRefGroup = F4AAE2B81B7DAC29001D8E75 /* Products */;
@@ -193,6 +208,7 @@
 				592116681CA8190F0086F865 /* Localizable.strings in Resources */,
 				F4AAE2C21B7DAC29001D8E75 /* Assets.xcassets in Resources */,
 				597A81911CA549B500EB0C22 /* discover.storyboard in Resources */,
+				5951382D1CA8638D00F494CA /* aboutfoodpin.png in Resources */,
 				597A818E1CA5494F00EB0C22 /* about.storyboard in Resources */,
 				F4AAE2C01B7DAC29001D8E75 /* Main.storyboard in Resources */,
 			);
@@ -241,6 +257,16 @@
 				592116751CA8198E0086F865 /* de */,
 			);
 			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		5951382F1CA8638D00F494CA /* aboutfoodpin.png */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5951382E1CA8638D00F494CA /* Base */,
+				595138301CA863A400F494CA /* zh-Hant */,
+				595138311CA863A700F494CA /* de */,
+			);
+			name = aboutfoodpin.png;
 			sourceTree = "<group>";
 		};
 		597A818C1CA5494F00EB0C22 /* about.storyboard */ = {
