@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		592116681CA8190F0086F865 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5921166A1CA8190F0086F865 /* Localizable.strings */; };
+		5921166D1CA8190F0086F865 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5921166F1CA8190F0086F865 /* InfoPlist.strings */; };
 		5974EE011CA5B4FB0049D807 /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5974EE001CA5B4FB0049D807 /* WebViewController.swift */; };
 		597A818E1CA5494F00EB0C22 /* about.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 597A818C1CA5494F00EB0C22 /* about.storyboard */; };
 		597A81911CA549B500EB0C22 /* discover.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 597A818F1CA549B500EB0C22 /* discover.storyboard */; };
@@ -30,6 +32,18 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		592116651CA8190B0086F865 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/discover.strings"; sourceTree = "<group>"; };
+		592116691CA8190F0086F865 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		5921166E1CA8190F0086F865 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
+		592116701CA819240086F865 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/Main.strings"; sourceTree = "<group>"; };
+		592116711CA819240086F865 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
+		592116721CA819240086F865 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/about.strings"; sourceTree = "<group>"; };
+		592116731CA8198A0086F865 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/about.strings; sourceTree = "<group>"; };
+		592116741CA8198B0086F865 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Localizable.strings; sourceTree = "<group>"; };
+		592116751CA8198E0086F865 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		592116761CA8198E0086F865 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Main.strings; sourceTree = "<group>"; };
+		592116771CA8198F0086F865 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/discover.strings; sourceTree = "<group>"; };
+		592116781CA8198F0086F865 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		5974EE001CA5B4FB0049D807 /* WebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
 		597A818D1CA5494F00EB0C22 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/about.storyboard; sourceTree = "<group>"; };
 		597A81901CA549B500EB0C22 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/discover.storyboard; sourceTree = "<group>"; };
@@ -87,6 +101,8 @@
 		F4AAE2B91B7DAC29001D8E75 /* FoodPin */ = {
 			isa = PBXGroup;
 			children = (
+				5921166F1CA8190F0086F865 /* InfoPlist.strings */,
+				5921166A1CA8190F0086F865 /* Localizable.strings */,
 				F4AAE2BA1B7DAC29001D8E75 /* AppDelegate.swift */,
 				F4AAE2BE1B7DAC29001D8E75 /* Main.storyboard */,
 				597A818F1CA549B500EB0C22 /* discover.storyboard */,
@@ -173,6 +189,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				F4AAE2C51B7DAC29001D8E75 /* LaunchScreen.storyboard in Resources */,
+				5921166D1CA8190F0086F865 /* InfoPlist.strings in Resources */,
+				592116681CA8190F0086F865 /* Localizable.strings in Resources */,
 				F4AAE2C21B7DAC29001D8E75 /* Assets.xcassets in Resources */,
 				597A81911CA549B500EB0C22 /* discover.storyboard in Resources */,
 				597A818E1CA5494F00EB0C22 /* about.storyboard in Resources */,
@@ -207,10 +225,30 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
+		5921166A1CA8190F0086F865 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				592116691CA8190F0086F865 /* zh-Hant */,
+				592116741CA8198B0086F865 /* de */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+		5921166F1CA8190F0086F865 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5921166E1CA8190F0086F865 /* zh-Hant */,
+				592116751CA8198E0086F865 /* de */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
 		597A818C1CA5494F00EB0C22 /* about.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				597A818D1CA5494F00EB0C22 /* Base */,
+				592116721CA819240086F865 /* zh-Hant */,
+				592116731CA8198A0086F865 /* de */,
 			);
 			name = about.storyboard;
 			sourceTree = "<group>";
@@ -219,6 +257,8 @@
 			isa = PBXVariantGroup;
 			children = (
 				597A81901CA549B500EB0C22 /* Base */,
+				592116651CA8190B0086F865 /* zh-Hant */,
+				592116771CA8198F0086F865 /* de */,
 			);
 			name = discover.storyboard;
 			sourceTree = "<group>";
@@ -227,6 +267,8 @@
 			isa = PBXVariantGroup;
 			children = (
 				F4AAE2BF1B7DAC29001D8E75 /* Base */,
+				592116701CA819240086F865 /* zh-Hant */,
+				592116761CA8198E0086F865 /* de */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -235,6 +277,8 @@
 			isa = PBXVariantGroup;
 			children = (
 				F4AAE2C41B7DAC29001D8E75 /* Base */,
+				592116711CA819240086F865 /* zh-Hant */,
+				592116781CA8198F0086F865 /* de */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
